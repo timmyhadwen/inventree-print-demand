@@ -38,10 +38,10 @@ class PrintDemandPlugin(SettingsMixin, UrlsMixin, UserInterfaceMixin, InvenTreeP
             re_path(r'^api/demand/', self.api_demand, name='api-demand'),
         ]
 
-    def get_ui_panels(self, request, **kwargs):
+    def get_ui_panels(self, request, context, **kwargs):
         return []
 
-    def get_ui_dashboard_items(self, request, **kwargs):
+    def get_ui_dashboard_items(self, request, context, **kwargs):
         return [
             {
                 'key': 'print-demand',

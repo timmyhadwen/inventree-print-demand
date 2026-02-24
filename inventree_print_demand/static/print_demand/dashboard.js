@@ -5,8 +5,11 @@
  * a colour-coded table showing stock vs demand for every 3D-printed part.
  */
 
-export function renderDashboardItem(context) {
-    const target = context.target;
+export function renderDashboardItem(target, data) {
+    if (!target) {
+        console.error("No target provided to renderDashboardItem");
+        return;
+    }
 
     target.innerHTML = '<em>Loading 3D print demand data...</em>';
 
